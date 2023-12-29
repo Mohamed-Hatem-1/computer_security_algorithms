@@ -28,37 +28,26 @@ class _EncryptionDecryptionScreenState
         result = monoalphabeticEncrypt(_inputText, _encryptionKey);
       } else if (_selectedAlgorithm == 'Playfair Cipher') {
         result = playfairEncrypt(_inputText, _encryptionKey);
+      } else if (_selectedAlgorithm == "Hill Cipher") {
       } else if (_selectedAlgorithm == "Rail Fence") {
-        result = railFenceEncrypt(
-          _inputText,
-          int.parse(_encryptionKey),
-        );
+        result = railFenceEncrypt(_inputText,int.parse(_encryptionKey),);
       } else if (_selectedAlgorithm == "One-time Pad") {
         result = oneTimePadEncrypt(_inputText, _encryptionKey);
       }
     } else {
       if (_selectedAlgorithm == 'Caesar Cipher') {
-        result = caesarCipherDecrypt(_inputText,
-            int.parse(_encryptionKey)); // Using a shift of 3 as an example
+        result = caesarCipherDecrypt(_inputText,int.parse(_encryptionKey));
       } else if (_selectedAlgorithm == 'Monoalphabetic') {
         result = monoalphabeticDecrypt(_inputText, _encryptionKey);
       } else if (_selectedAlgorithm == 'Playfair Cipher') {
         result = playfairDecrypt(_inputText, _encryptionKey);
+      } else if (_selectedAlgorithm == "Hill Cipher") {
       } else if (_selectedAlgorithm == "Rail Fence") {
-        result = railFenceDecrypt(
-          _inputText,
-          int.parse(_encryptionKey),
-        );
+        result = railFenceDecrypt(_inputText,int.parse(_encryptionKey),);
       } else if (_selectedAlgorithm == "One-time Pad") {
         result = oneTimePadDecrypt(_inputText, _encryptionKey);
       }
     }
-    // ScaffoldMessenger.of(context).showSnackBar(
-    //   SnackBar(
-    //     content: Text('Result: $result'),
-    //     duration: const Duration(seconds: 3),
-    //   ),
-    // );
     showDialog(
       context: context,
       builder: (context) {
